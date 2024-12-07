@@ -448,6 +448,7 @@ function remove_loading_overlay() {
  * @param {Function} callback trigged after map is loaded
  */
 async function load_scenemap(url, is_video = false, width = null, height = null, UVTTFile = false, callback = null) {
+	console.log('load_scenemap');
 
 	$("#scene_map_container").toggleClass('map-loading', true);
 
@@ -537,6 +538,7 @@ async function load_scenemap(url, is_video = false, width = null, height = null,
 			newmap.on("load", callback);
 		}
 		$("#map_items").append(newmap);
+		document.getElementById('map_items').appendChild(  document.getElementById('draw_overlay') )
 
 
 	}
@@ -594,6 +596,7 @@ async function load_scenemap(url, is_video = false, width = null, height = null,
 			$("#scene_map_container").toggleClass('map-loading', false);
 		}
 		$("#map_items").append(newmap);
+		document.getElementById('map_items').appendChild(  document.getElementById('draw_overlay') )
 
 	}
 
